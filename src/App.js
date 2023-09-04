@@ -1,25 +1,53 @@
-import logo from './logo.svg';
+import React from 'react';
+import {Button,Container,Nav,NavDropdown,Navbar} from 'react-bootstrap'
 import './App.css';
+import Main from './Main';
 
-function App() {
+class App extends React.Component{
+   
+  
+
+   render(){
+   
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App"style={{textAlign:"center" }} >
+
+
+    <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+      <Container>
+        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="#features">Features</Nav.Link>
+            <Nav.Link href="#pricing">Pricing</Nav.Link>
+            <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
+              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">
+                
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4">
+                
+              </NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+          <Nav>
+            <Nav.Link href="#deets">More deets</Nav.Link>
+            <Nav.Link eventKey={2} href="#memes">
+             
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+     </Navbar>
+       
+
+       <Main/>       
     </div>
   );
+ }
 }
 
 export default App;
